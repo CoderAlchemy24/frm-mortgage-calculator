@@ -47,7 +47,7 @@ export default function CalculatorPage({ onCalculate} ) {
     onSubmit: (values) => {
       const P = Number(values.amount);
       const years = Number(values.term);
-      const r = Number(values.rate) / 100 / 12; // havi kamatláb
+      const r = Number(values.rate) / 100 / 12; // monthly interest rate
       const n = years * 12;
 
       let monthly = 0;

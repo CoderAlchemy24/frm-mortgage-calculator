@@ -13,7 +13,7 @@
   font-family: var(--font-family);
 }
  
-/* Fejléc */
+
 header{
     display: flex;
     flex-direction: row;
@@ -68,14 +68,13 @@ header{
   margin-top: 16px;
 }
 
-/* Címkék */
 .form-group > label {
   font-size: 14px;
   font-weight: 600;
   color: var(--color-slate-900);
 }
 
-/* Input wrap + díszítő címkék (prefix/suffix) */
+/* Input wrap +  (prefix/suffix) */
 .input-wrapper {
   position: relative;
   width: 100%;
@@ -244,7 +243,6 @@ button[type="submit"]:focus-visible {
 }
 
 
-/* ...existing code... */
 
 /* Tablet: 768–1023 px – 768px széles, tartalma nőjön magasságban */
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
