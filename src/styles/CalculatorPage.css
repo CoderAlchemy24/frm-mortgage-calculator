@@ -1,0 +1,276 @@
+ .calculator-form {
+  width: 504px;
+  height: 656px;
+  padding: 40px;
+  box-sizing: border-box;
+  background: var(--color-white);
+  border: 1px solid var(--color-slate-100);
+  border-right:none;
+
+  display: flex;
+  flex-direction: column;
+
+  font-family: var(--font-family);
+}
+ 
+/* Fejléc */
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.calc-h1{
+     font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 22px;
+    margin: 0 0 40px 0;
+    text-align: left;
+    display: inline;
+    color: var(--color-slate-900)
+
+}
+
+.clear-all-btn{
+    background-color: white;
+    border: none;
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 12px;
+    display: inline;
+    position:relative;
+    top:-18px;
+    text-decoration: underline;
+    color: var(--color-slate-900);
+    cursor: pointer;
+} 
+
+.clear-all-btn:focus { outline: none; }
+
+.clear-all-btn:focus-visible{
+  outline: 2px solid var(--color-slate-300);
+  outline-offset: none;
+  padding: 2px;
+  font-size:14px;
+  border-radius: 6px;   
+}
+
+.clear-all-btn:hover{
+  
+  text-decoration-thickness: 1px;
+  font-size:16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+/* Címkék */
+.form-group > label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-slate-900);
+}
+
+/* Input wrap + díszítő címkék (prefix/suffix) */
+.input-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.input-wrapper.with-prefix input {
+  padding-left: 48px;
+}
+.input-wrapper.with-suffix input {
+  padding-right: 60px;
+}
+
+.input-adornment {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 46px;
+  padding: 4px 18px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.input-adornment.prefix {
+  left: 1px;
+  
+  background: #e0f2fe;         
+  color: #0369a1;              
+}
+
+.input-adornment.suffix {
+  right: 1px;
+  background: #e0f2fe;
+  color: #0369a1;
+}
+
+
+input[type="number"],
+input[type="text"] {
+  width: 100%;
+  height: 48px;
+  border: 1px solid var(--color-slate-300);
+  border-radius: 8px;
+  padding: 0 16px;
+  font-size: 16px;
+  color: var(--color-slate-900);
+  background: var(--color-white);
+  transition: border-color .2s ease, box-shadow .2s ease;
+  outline: none;
+  box-sizing: border-box;
+}
+
+input[type="number"]:focus,
+input[type="text"]:focus {
+  border-color: var(--color-slate-700);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+/* Two column (Term + Rate) */
+.form-row {
+  display: flex;
+  gap: 16px;
+}
+.form-row .form-group {
+  flex: 1;
+}
+
+/* Error message */
+.error-label-amount,
+ .error-label-term,
+  .error-label-rate,
+  .error-label-radio-btns {
+  color: var(--color-red);
+  font-size: 12px;
+  margin-top: 6px;
+}
+
+
+
+/* ---- Radio section ---- */
+
+.type-label{
+  font-size: 16px;
+  font-weight:500;
+}
+.radio-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.radio-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;                 
+  padding: 14px 16px;
+  border: 1px solid var(--color-slate-300);
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 18px;     
+  font-weight: 700;     
+  color: var(--color-slate-900);
+  background: #f8fafc;
+  transition: color .2s ease, box-shadow .2s ease, background .2s ease;
+}
+
+input[type="radio"] {
+  width: auto;              
+  height: auto;
+  margin: 0;
+}
+
+.radio-label:hover {
+  
+  border: 1px solid var(--color-lime) 
+}
+
+.radio-label:has(input:checked) {
+  border-color: var(--color-lime);
+  box-shadow: 0 0 0 3px var(--color-slate-300);
+  background: #f7fee7;
+}
+
+
+button[type="submit"] {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  padding: 16px;
+  width: 80%;
+  height: 56px;
+  border: none;
+  border-radius: 28px;
+  background: var(--color-lime);
+  color: var(--color-slate-900);
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: filter .15s ease, transform .02s ease;
+}
+
+button[type="submit"]::before {
+  content: "";
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+}
+
+button[type="submit"]:hover {
+  opacity:70%;
+}
+button[type="submit"]:active {
+  transform: translateY(1px);
+}
+
+
+button[type="submit"]:focus-visible {
+  outline: 3px solid rgba(190, 242, 100, 0.6);
+  outline-offset: 2px;
+}
+
+
+/* ...existing code... */
+
+/* Tablet: 768–1023 px – 768px széles, tartalma nőjön magasságban */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .calculator-form{
+    width: 768px;
+    height: max-content;
+  }
+}
+
+/* Mobile: ≤767 px – 96% széles, oszlop elrendezés a .form-row-ban */
+@media only screen and (max-width: 767px) {
+  .calculator-form{
+     width: 100%;
+     height: max-content;
+  }
+
+  .form-row{
+    flex-direction: column;
+  }
+
+  input[type="number"],
+  input[type="text"] {
+    width: 100%;
+  }
+
+  button[type="submit"]{
+    width: 96%;
+  }
+}
